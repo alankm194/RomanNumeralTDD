@@ -32,6 +32,9 @@ public class RomanNumeralConverter {
         INTEGER_NUMERAL_MAP.put(1000, "M");
     }
     public String fromIntToNumeral(int input) {
+        if (input == 0) {
+            throw new IllegalArgumentException("input must be bigger than 0");
+        }
         StringBuilder result = new StringBuilder();
         while (input > 0) {
             Map.Entry<Integer, String> intNumeralPair = INTEGER_NUMERAL_MAP.floorEntry(input);

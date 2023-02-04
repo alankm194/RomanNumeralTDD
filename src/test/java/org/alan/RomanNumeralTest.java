@@ -6,6 +6,7 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvFileSource;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 public class RomanNumeralTest {
     
@@ -49,5 +50,15 @@ public class RomanNumeralTest {
     public void whenIntegerConvertsTo2RomanNumeralCharacters_Return2Numerals(int input, String expected) {
         assertEquals(expected, converter.fromIntToNumeral(input));
     }
+
+    @Test
+    public void whenIntegerIs0_thenThrowIllegalArgumentException() {
+        IllegalArgumentException thrown = assertThrows(IllegalArgumentException.class,
+                () -> converter.fromIntToNumeral(0),
+                "IllegalArgumentException exception expected");
+
+        assertEquals("input must be bigger than 0", thrown.getMessage());
+    }
+
 
 }
