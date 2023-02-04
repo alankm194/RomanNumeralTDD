@@ -1,6 +1,7 @@
 package org.alan;
 
 import java.util.Map;
+import java.util.TreeMap;
 
 public class RomanNumeralConverter {
 
@@ -15,13 +16,20 @@ public class RomanNumeralConverter {
 
      */
     public String fromIntToNumeral(int input) {
-        var integerToNumeralMap = Map.of(1, "I",
+        var integerToNumeralMap = new TreeMap<>(Map.of
+                (1, "I",
                 5, "V",
                 10, "X",
                 50, "L",
                 100, "C",
                 500, "D",
-                1000, "M");
-        return integerToNumeralMap.get(input);
+                1000, "M"));
+        StringBuilder result = new StringBuilder();
+        while (input > 0) {
+            Map.Entry<Integer, String> intNumeralPair = integerToNumeralMap.floorEntry(input);
+            result.append(intNumeralPair.getValue());
+            input -= intNumeralPair.getKey();
+        }
+        return result.toString();
     }
 }

@@ -1,5 +1,6 @@
 package org.alan;
 
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvFileSource;
 
@@ -13,5 +14,9 @@ public class RomanNumeralTest {
         RomanNumeralConverter romanNumConverter = new RomanNumeralConverter();
         assertEquals(expected, romanNumConverter.fromIntToNumeral(input));
     }
-
+    @Test
+    public void whenIntegerIs2_thenReturnII() {
+        RomanNumeralConverter romanNumConverter = new RomanNumeralConverter();
+        assertEquals("II", romanNumConverter.fromIntToNumeral(2));
+    }
 }
