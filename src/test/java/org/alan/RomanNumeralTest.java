@@ -31,19 +31,6 @@ public class RomanNumeralTest {
         assertEquals("III", converter.fromIntToNumeral(3));
     }
 
-    @Test
-    public void whenIntegerIs4_thenReturnIV() {
-        assertEquals("IV", converter.fromIntToNumeral(4));
-    }
-
-    @Test
-    public void whenIntegerIs9_thenReturnIX() {
-        assertEquals("IX", converter.fromIntToNumeral(9));
-    }
-    @Test
-    public void whenIntegerIs40_thenReturnXL() {
-        assertEquals("XL", converter.fromIntToNumeral(40));
-    }
 
     @ParameterizedTest
     @CsvFileSource(resources = "/doubleRomanNumeralCharacterTest.csv", numLinesToSkip = 1)
