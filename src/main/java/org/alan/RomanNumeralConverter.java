@@ -26,6 +26,7 @@ public class RomanNumeralConverter {
         INTEGER_NUMERAL_MAP.put(50, "L");
         INTEGER_NUMERAL_MAP.put(90, "XC");
         INTEGER_NUMERAL_MAP.put(100, "C");
+        INTEGER_NUMERAL_MAP.put(400, "CD");
         INTEGER_NUMERAL_MAP.put(500, "D");
         INTEGER_NUMERAL_MAP.put(1000, "M");
     }
