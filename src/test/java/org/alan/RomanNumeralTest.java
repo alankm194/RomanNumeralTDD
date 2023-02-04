@@ -9,4 +9,10 @@ public class RomanNumeralTest {
         RomanNumeralConverter romanNumConverter = new RomanNumeralConverter();
         assertEquals("I", romanNumConverter.fromIntToNumeral(1));
     }
+
+    @Test
+    public void WhenIntegerIs5_thenReturnV() {
+        RomanNumeralConverter romanNumConverter = new RomanNumeralConverter();
+        assertEquals("V", romanNumConverter.fromIntToNumeral(5));
+    }
 }
