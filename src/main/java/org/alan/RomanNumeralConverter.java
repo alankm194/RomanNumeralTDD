@@ -15,7 +15,7 @@ public class RomanNumeralConverter {
 
      */
     public String fromIntToNumeral(int input) {
-        var integerToNumeralMap = Map.of(1, "I", 5, "V", 10, "X");
+        var integerToNumeralMap = Map.of(1, "I", 5, "V", 10, "X", 50, "L");
         return integerToNumeralMap.get(input);
     }
 }
