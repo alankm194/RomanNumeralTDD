@@ -28,6 +28,7 @@ public class RomanNumeralConverter {
         INTEGER_NUMERAL_MAP.put(100, "C");
         INTEGER_NUMERAL_MAP.put(400, "CD");
         INTEGER_NUMERAL_MAP.put(500, "D");
+        INTEGER_NUMERAL_MAP.put(900, "CM");
         INTEGER_NUMERAL_MAP.put(1000, "M");
     }
     public String fromIntToNumeral(int input) {

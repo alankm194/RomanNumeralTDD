@@ -54,4 +54,8 @@ public class RomanNumeralTest {
         assertEquals("CD", converter.fromIntToNumeral(400));
     }
 
+    @Test
+    public void whenIntegerIs900_thenReturnCM() {
+        assertEquals("CM", converter.fromIntToNumeral(900));
+    }
 }
