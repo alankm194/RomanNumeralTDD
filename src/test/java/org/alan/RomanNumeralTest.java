@@ -51,21 +51,15 @@ public class RomanNumeralTest {
         assertEquals(expected, converter.fromIntToNumeral(input));
     }
 
-    @Test
-    public void whenIntegerIs0_thenThrowIllegalArgumentException() {
+    @ParameterizedTest
+    @CsvFileSource(resources = "/lessThan1ThrowsExceptionTest.csv", numLinesToSkip = 1)
+    public void whenIntegersAreLessThan1_throwIllegalArgumentException(int input) {
         IllegalArgumentException thrown = assertThrows(IllegalArgumentException.class,
-                () -> converter.fromIntToNumeral(0),
+                () -> converter.fromIntToNumeral(input),
                 "IllegalArgumentException exception expected");
 
         assertEquals("input must be bigger than 0", thrown.getMessage());
     }
 
-    @Test
-    public void whenIntegerIsNegative1_thenThrowIllegalArgumentException() {
-        IllegalArgumentException thrown = assertThrows(IllegalArgumentException.class,
-                () -> converter.fromIntToNumeral(-1),
-                "IllegalArgumentException exception expected");
 
-        assertEquals("input must be bigger than 0", thrown.getMessage());
-    }
 }
