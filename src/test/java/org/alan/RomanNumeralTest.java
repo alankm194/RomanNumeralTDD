@@ -27,4 +27,10 @@ public class RomanNumeralTest {
         RomanNumeralConverter romanNumConverter = new RomanNumeralConverter();
         assertEquals("L", romanNumConverter.fromIntToNumeral(50));
     }
+
+    @Test
+    public void WhenIntegerIs100_thenReturnC() {
+        RomanNumeralConverter romanNumConverter = new RomanNumeralConverter();
+        assertEquals("C", romanNumConverter.fromIntToNumeral(100));
+    }
 }
