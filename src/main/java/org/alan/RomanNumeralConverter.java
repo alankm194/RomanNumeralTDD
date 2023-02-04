@@ -18,6 +18,7 @@ public class RomanNumeralConverter {
     public String fromIntToNumeral(int input) {
         var integerToNumeralMap = new TreeMap<>(Map.of
                 (1, "I",
+                4,"IV",
                 5, "V",
                 10, "X",
                 50, "L",

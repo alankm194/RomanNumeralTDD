@@ -19,4 +19,16 @@ public class RomanNumeralTest {
         RomanNumeralConverter romanNumConverter = new RomanNumeralConverter();
         assertEquals("II", romanNumConverter.fromIntToNumeral(2));
     }
+
+    @Test
+    public void whenIntegerIs3_thenReturnIII() {
+        RomanNumeralConverter romanNumConverter = new RomanNumeralConverter();
+        assertEquals("III", romanNumConverter.fromIntToNumeral(3));
+    }
+
+    @Test
+    public void whenIntegerIs4_thenReturnIV() {
+        RomanNumeralConverter romanNumConverter = new RomanNumeralConverter();
+        assertEquals("IV", romanNumConverter.fromIntToNumeral(4));
+    }
 }
