@@ -60,5 +60,12 @@ public class RomanNumeralTest {
         assertEquals("input must be bigger than 0", thrown.getMessage());
     }
 
+    @Test
+    public void whenIntegerIsNegative1_thenThrowIllegalArgumentException() {
+        IllegalArgumentException thrown = assertThrows(IllegalArgumentException.class,
+                () -> converter.fromIntToNumeral(-1),
+                "IllegalArgumentException exception expected");
 
+        assertEquals("input must be bigger than 0", thrown.getMessage());
+    }
 }

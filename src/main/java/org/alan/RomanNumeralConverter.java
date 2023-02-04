@@ -32,7 +32,7 @@ public class RomanNumeralConverter {
         INTEGER_NUMERAL_MAP.put(1000, "M");
     }
     public String fromIntToNumeral(int input) {
-        if (input == 0) {
+        if (input <= 0) {
             throw new IllegalArgumentException("input must be bigger than 0");
         }
         StringBuilder result = new StringBuilder();
