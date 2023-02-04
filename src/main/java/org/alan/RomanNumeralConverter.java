@@ -13,25 +13,26 @@ public class RomanNumeralConverter {
         concatenate result string with numeral value
         subtract integer key from input
     return result
-
      */
-    public String fromIntToNumeral(int input) {
-        var integerToNumeralMap = new TreeMap<Integer, String>();
-        integerToNumeralMap.put(1, "I");
-        integerToNumeralMap.put(4, "IV");
-        integerToNumeralMap.put(5, "V");
-        integerToNumeralMap.put(9, "IX");
-        integerToNumeralMap.put(10, "X");
-        integerToNumeralMap.put(40, "XL");
-        integerToNumeralMap.put(50, "L");
-        integerToNumeralMap.put(90, "XC");
-        integerToNumeralMap.put(100, "C");
-        integerToNumeralMap.put(500, "D");
-        integerToNumeralMap.put(1000, "M");
 
+    private final static TreeMap<Integer, String> INTEGER_NUMERAL_MAP = new TreeMap<>();
+    static {
+        INTEGER_NUMERAL_MAP.put(1, "I");
+        INTEGER_NUMERAL_MAP.put(4, "IV");
+        INTEGER_NUMERAL_MAP.put(5, "V");
+        INTEGER_NUMERAL_MAP.put(9, "IX");
+        INTEGER_NUMERAL_MAP.put(10, "X");
+        INTEGER_NUMERAL_MAP.put(40, "XL");
+        INTEGER_NUMERAL_MAP.put(50, "L");
+        INTEGER_NUMERAL_MAP.put(90, "XC");
+        INTEGER_NUMERAL_MAP.put(100, "C");
+        INTEGER_NUMERAL_MAP.put(500, "D");
+        INTEGER_NUMERAL_MAP.put(1000, "M");
+    }
+    public String fromIntToNumeral(int input) {
         StringBuilder result = new StringBuilder();
         while (input > 0) {
-            Map.Entry<Integer, String> intNumeralPair = integerToNumeralMap.floorEntry(input);
+            Map.Entry<Integer, String> intNumeralPair = INTEGER_NUMERAL_MAP.floorEntry(input);
             result.append(intNumeralPair.getValue());
             input -= intNumeralPair.getKey();
         }
