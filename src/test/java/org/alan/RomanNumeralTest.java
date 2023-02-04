@@ -39,4 +39,10 @@ public class RomanNumeralTest {
         RomanNumeralConverter romanNumConverter = new RomanNumeralConverter();
         assertEquals("D", romanNumConverter.fromIntToNumeral(500));
     }
+
+    @Test
+    public void WhenIntegerIs1000_thenReturnD() {
+        RomanNumeralConverter romanNumConverter = new RomanNumeralConverter();
+        assertEquals("M", romanNumConverter.fromIntToNumeral(1000));
+    }
 }
