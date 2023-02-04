@@ -39,4 +39,9 @@ public class RomanNumeralTest {
     public void whenIntegerIs9_thenReturnIX() {
         assertEquals("IX", converter.fromIntToNumeral(9));
     }
+    @Test
+    public void whenIntegerIs40_thenReturnXL() {
+        assertEquals("XL", converter.fromIntToNumeral(40));
+    }
+
 }
