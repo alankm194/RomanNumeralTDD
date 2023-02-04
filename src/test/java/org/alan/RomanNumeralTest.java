@@ -15,4 +15,10 @@ public class RomanNumeralTest {
         RomanNumeralConverter romanNumConverter = new RomanNumeralConverter();
         assertEquals("V", romanNumConverter.fromIntToNumeral(5));
     }
+
+    @Test
+    public void WhenIntegerIs10_thenReturnX() {
+        RomanNumeralConverter romanNumConverter = new RomanNumeralConverter();
+        assertEquals("X", romanNumConverter.fromIntToNumeral(10));
+    }
 }
