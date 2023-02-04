@@ -33,4 +33,10 @@ public class RomanNumeralTest {
         RomanNumeralConverter romanNumConverter = new RomanNumeralConverter();
         assertEquals("C", romanNumConverter.fromIntToNumeral(100));
     }
+
+    @Test
+    public void WhenIntegerIs500_thenReturnD() {
+        RomanNumeralConverter romanNumConverter = new RomanNumeralConverter();
+        assertEquals("D", romanNumConverter.fromIntToNumeral(500));
+    }
 }
