@@ -44,18 +44,10 @@ public class RomanNumeralTest {
         assertEquals("XL", converter.fromIntToNumeral(40));
     }
 
-    @Test
-    public void whenIntegerIs90_thenReturnXL() {
-        assertEquals("XC", converter.fromIntToNumeral(90));
+    @ParameterizedTest
+    @CsvFileSource(resources = "/doubleRomanNumeralCharacterTest.csv", numLinesToSkip = 1)
+    public void whenIntegerConvertsTo2RomanNumeralCharacters_Return2Numerals(int input, String expected) {
+        assertEquals(expected, converter.fromIntToNumeral(input));
     }
 
-    @Test
-    public void whenIntegerIs400_thenReturnCD() {
-        assertEquals("CD", converter.fromIntToNumeral(400));
-    }
-
-    @Test
-    public void whenIntegerIs900_thenReturnCM() {
-        assertEquals("CM", converter.fromIntToNumeral(900));
-    }
 }
