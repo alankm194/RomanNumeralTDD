@@ -31,4 +31,10 @@ public class RomanNumeralTest {
         RomanNumeralConverter romanNumConverter = new RomanNumeralConverter();
         assertEquals("IV", romanNumConverter.fromIntToNumeral(4));
     }
+
+    @Test
+    public void whenIntegerIs9_thenReturnIX() {
+        RomanNumeralConverter romanNumConverter = new RomanNumeralConverter();
+        assertEquals("IX", romanNumConverter.fromIntToNumeral(9));
+    }
 }
