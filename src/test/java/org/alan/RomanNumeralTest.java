@@ -21,14 +21,12 @@ public class RomanNumeralTest {
     public void WhenIntegerHasSingleRomanNumeralCharacter_ThenReturnCharacter(int input, String expected) {
         assertEquals(expected, converter.fromIntToNumeral(input));
     }
-    @Test
-    public void whenIntegerIs2_thenReturnII() {
-        assertEquals("II", converter.fromIntToNumeral(2));
-    }
 
-    @Test
-    public void whenIntegerIs3_thenReturnIII() {
-        assertEquals("III", converter.fromIntToNumeral(3));
+
+    @ParameterizedTest
+    @CsvFileSource(resources = "/validIntegerToRomanNumeralTest.csv", numLinesToSkip = 1)
+    public void WhenIntegerIsValidNumber_ThenReturnCorrectRomaNumeral(int input, String expected) {
+        assertEquals(expected, converter.fromIntToNumeral(input));
     }
 
 
@@ -43,6 +41,15 @@ public class RomanNumeralTest {
     public void whenIntegersAreLessThan1_throwIllegalArgumentException(int input) {
         IllegalArgumentException thrown = assertThrows(IllegalArgumentException.class,
                 () -> converter.fromIntToNumeral(input),
+                "IllegalArgumentException exception expected");
+
+        assertEquals("input must be bigger than 0", thrown.getMessage());
+    }
+
+    @Test
+    public void whenIntegersIsIntegerMINVALUE_throwIllegalArgumentException() {
+        IllegalArgumentException thrown = assertThrows(IllegalArgumentException.class,
+                () -> converter.fromIntToNumeral(Integer.MIN_VALUE),
                 "IllegalArgumentException exception expected");
 
         assertEquals("input must be bigger than 0", thrown.getMessage());
