@@ -9,7 +9,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 public class RomanNumeralTest {
-    
+
     private RomanNumeralConverter converter;
     private final String illegalArgumentExceptionMessage = "input must be between 1 and 99999";
 
@@ -64,6 +64,12 @@ public class RomanNumeralTest {
                 "IllegalArgumentException exception expected");
 
         assertEquals(illegalArgumentExceptionMessage, thrown.getMessage());
+    }
+
+    @Test
+    public void whenIntegersIsMaximumAllowedInput_returnExpectedResult() {
+        String expected = "MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMCMXCIX";
+        assertEquals(expected, converter.fromIntToNumeral(99999));
     }
 
 }
