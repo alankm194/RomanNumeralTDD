@@ -11,6 +11,7 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 public class RomanNumeralTest {
     
     private RomanNumeralConverter converter;
+    private final String illegalArgumentExceptionMessage = "input must be between 1 and 99999";
 
     @BeforeEach
     public void init() {
@@ -44,7 +45,7 @@ public class RomanNumeralTest {
                 () -> converter.fromIntToNumeral(input),
                 "IllegalArgumentException exception expected");
 
-        assertEquals("input must be between 1 and 99999", thrown.getMessage());
+        assertEquals(illegalArgumentExceptionMessage, thrown.getMessage());
     }
 
     @Test
@@ -53,7 +54,7 @@ public class RomanNumeralTest {
                 () -> converter.fromIntToNumeral(Integer.MIN_VALUE),
                 "IllegalArgumentException exception expected");
 
-        assertEquals("input must be between 1 and 99999", thrown.getMessage());
+        assertEquals(illegalArgumentExceptionMessage, thrown.getMessage());
     }
 
     @Test
@@ -62,7 +63,7 @@ public class RomanNumeralTest {
                 () -> converter.fromIntToNumeral(100000),
                 "IllegalArgumentException exception expected");
 
-        assertEquals("input must be between 1 and 99999", thrown.getMessage());
+        assertEquals(illegalArgumentExceptionMessage, thrown.getMessage());
     }
 
 }
