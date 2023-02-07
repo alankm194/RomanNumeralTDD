@@ -1,6 +1,8 @@
 package org.alan;
 
+import java.util.Collections;
 import java.util.Map;
+import java.util.NavigableMap;
 import java.util.TreeMap;
 
 public class RomanNumeralConverter {
@@ -15,21 +17,23 @@ public class RomanNumeralConverter {
     return result
      */
 
-    private final static TreeMap<Integer, String> INTEGER_NUMERAL_MAP = new TreeMap<>();
+    private final static NavigableMap<Integer, String> INTEGER_NUMERAL_MAP;
     static {
-        INTEGER_NUMERAL_MAP.put(1, "I");
-        INTEGER_NUMERAL_MAP.put(4, "IV");
-        INTEGER_NUMERAL_MAP.put(5, "V");
-        INTEGER_NUMERAL_MAP.put(9, "IX");
-        INTEGER_NUMERAL_MAP.put(10, "X");
-        INTEGER_NUMERAL_MAP.put(40, "XL");
-        INTEGER_NUMERAL_MAP.put(50, "L");
-        INTEGER_NUMERAL_MAP.put(90, "XC");
-        INTEGER_NUMERAL_MAP.put(100, "C");
-        INTEGER_NUMERAL_MAP.put(400, "CD");
-        INTEGER_NUMERAL_MAP.put(500, "D");
-        INTEGER_NUMERAL_MAP.put(900, "CM");
-        INTEGER_NUMERAL_MAP.put(1000, "M");
+        var map = new TreeMap<Integer, String>();
+        map.put(1, "I");
+        map.put(4, "IV");
+        map.put(5, "V");
+        map.put(9, "IX");
+        map.put(10, "X");
+        map.put(40, "XL");
+        map.put(50, "L");
+        map.put(90, "XC");
+        map.put(100, "C");
+        map.put(400, "CD");
+        map.put(500, "D");
+        map.put(900, "CM");
+        map.put(1000, "M");
+        INTEGER_NUMERAL_MAP = Collections.unmodifiableNavigableMap(map);
     }
     public String fromIntToNumeral(int input) throws IllegalArgumentException {
         if (input <= 0 || input >= 100000) { throw new IllegalArgumentException("input must be between 1 and 99999");}
